@@ -1,0 +1,1751 @@
+Program.Sub.ScreenSU.Start
+
+Gui.F_service..Create
+Gui.F_service..Caption("Service Web Request")
+Gui.F_service..Size(22020,14460)
+Gui.F_service..Position(420,0)
+Gui.F_service..AlwaysOnTop(False)
+Gui.F_service..FontName("Arial")
+Gui.F_service..FontSize(9)
+Gui.F_service..ForeColor(0)
+Gui.F_service..Backcolor(-2147483633)
+Gui.F_service..ControlBox(True)
+Gui.F_service..MaxButton(False)
+Gui.F_service..MinButton(True)
+Gui.F_service..MousePointer(1)
+Gui.F_service..Moveable(True)
+Gui.F_service..Sizeable(False)
+Gui.F_service..ShowInTaskBar(True)
+Gui.F_service..TitleBar(True)
+
+Gui.F_service..Event(unload,F_service_Unload)
+
+Gui.F_service.frame_container.Create(frame)
+Gui.F_service.frame_container.Caption("")
+Gui.F_service.frame_container.Visible(True)
+Gui.F_service.frame_container.Size(13875,11550)
+Gui.F_service.frame_container.Zorder(0)
+Gui.F_service.frame_container.Position(4170,1695)
+Gui.F_service.frame_container.Enabled(True)
+Gui.F_service.frame_container.BorderStyle(0)
+Gui.F_service.frame_container.FontName("Arial")
+Gui.F_service.frame_container.FontSize(9)
+Gui.F_service.frame_container.Tooltip("")
+
+
+Gui.F_service.cmdsearch.Create(button)
+Gui.F_service.cmdsearch.Caption("Search")
+Gui.F_service.cmdsearch.Visible(True)
+Gui.F_service.cmdsearch.Size(1630,535)
+Gui.F_service.cmdsearch.Zorder(0)
+Gui.F_service.cmdsearch.Position(6175,1015)
+Gui.F_service.cmdsearch.Enabled(True)
+Gui.F_service.cmdsearch.FontName("Arial")
+Gui.F_service.cmdsearch.FontSize(10)
+Gui.F_service.cmdsearch.TabStop(True)
+Gui.F_service.cmdsearch.TabIndex(6)
+Gui.F_service.cmdsearch.Tooltip("")
+Gui.F_service.cmdsearch.ControlGroup(0)
+Gui.F_service.cmdsearch.DefaultValue("")
+
+Gui.F_service.cmdsearch.Event(click,cmdsearch_click)
+
+Gui.F_service.lblTVersion.Create(label)
+Gui.F_service.lblTVersion.Caption("To Version")
+Gui.F_service.lblTVersion.Visible(True)
+Gui.F_service.lblTVersion.Size(1305,255)
+Gui.F_service.lblTVersion.Zorder(1)
+Gui.F_service.lblTVersion.Position(1890,150)
+Gui.F_service.lblTVersion.Enabled(True)
+Gui.F_service.lblTVersion.Alignment(0)
+Gui.F_service.lblTVersion.FontName("Arial")
+Gui.F_service.lblTVersion.FontSize(8)
+Gui.F_service.lblTVersion.Backcolor(-2147483633)
+Gui.F_service.lblTVersion.BackStyle(0)
+Gui.F_service.lblTVersion.Tooltip("")
+Gui.F_service.lblTVersion.ControlGroup(0)
+
+
+Gui.F_service.lblfVersion.Create(label)
+Gui.F_service.lblfVersion.Caption("From Version")
+Gui.F_service.lblfVersion.Visible(True)
+Gui.F_service.lblfVersion.Size(1185,255)
+Gui.F_service.lblfVersion.Zorder(1)
+Gui.F_service.lblfVersion.Position(420,150)
+Gui.F_service.lblfVersion.Enabled(True)
+Gui.F_service.lblfVersion.Alignment(0)
+Gui.F_service.lblfVersion.FontName("Arial")
+Gui.F_service.lblfVersion.FontSize(8)
+Gui.F_service.lblfVersion.Backcolor(-2147483633)
+Gui.F_service.lblfVersion.BackStyle(0)
+Gui.F_service.lblfVersion.Tooltip("")
+Gui.F_service.lblfVersion.ControlGroup(0)
+
+
+Gui.F_service.txtsearch.Create(textbox)
+Gui.F_service.txtsearch.Text("")
+Gui.F_service.txtsearch.Visible(True)
+Gui.F_service.txtsearch.Size(5220,300)
+Gui.F_service.txtsearch.Zorder(0)
+Gui.F_service.txtsearch.Position(400,1205)
+Gui.F_service.txtsearch.Enabled(True)
+Gui.F_service.txtsearch.Alignment(0)
+Gui.F_service.txtsearch.FontName("Arial")
+Gui.F_service.txtsearch.FontSize(10)
+Gui.F_service.txtsearch.Backcolor(16777215)
+Gui.F_service.txtsearch.BorderStyle(1)
+Gui.F_service.txtsearch.TabStop(True)
+Gui.F_service.txtsearch.TabIndex(5)
+Gui.F_service.txtsearch.Tooltip("")
+Gui.F_service.txtsearch.ControlGroup(0)
+Gui.F_service.txtsearch.DefaultValue("")
+
+
+Gui.F_service.fgfiles.Create(gsflexgrid)
+Gui.F_service.fgfiles.Visible(True)
+Gui.F_service.fgfiles.Size(21010,2610)
+Gui.F_service.fgfiles.Zorder(0)
+Gui.F_service.fgfiles.Position(400,11100)
+Gui.F_service.fgfiles.Enabled(True)
+Gui.F_service.fgfiles.FixedRows(0)
+Gui.F_service.fgfiles.FixedCols(0)
+
+Gui.F_service.fgfiles.Event(commandclick,fgfiles_commandclick)
+Gui.F_service.fgfiles.Event(mousedown,fgfiles_MouseDown)
+
+Gui.F_service.lblfiles.Create(label)
+Gui.F_service.lblfiles.Caption("Program")
+Gui.F_service.lblfiles.Visible(True)
+Gui.F_service.lblfiles.Size(5115,300)
+Gui.F_service.lblfiles.Zorder(1)
+Gui.F_service.lblfiles.Position(400,10845)
+Gui.F_service.lblfiles.Enabled(True)
+Gui.F_service.lblfiles.Alignment(0)
+Gui.F_service.lblfiles.FontName("Arial")
+Gui.F_service.lblfiles.FontSize(8)
+Gui.F_service.lblfiles.Backcolor(-2147483633)
+Gui.F_service.lblfiles.BackStyle(0)
+Gui.F_service.lblfiles.Tooltip("")
+Gui.F_service.lblfiles.ControlGroup(0)
+
+
+Gui.F_service.lbl5.Create(label)
+Gui.F_service.lbl5.Caption("Search Text")
+Gui.F_service.lbl5.Visible(True)
+Gui.F_service.lbl5.Size(1185,255)
+Gui.F_service.lbl5.Zorder(1)
+Gui.F_service.lbl5.Position(400,950)
+Gui.F_service.lbl5.Enabled(True)
+Gui.F_service.lbl5.Alignment(0)
+Gui.F_service.lbl5.FontName("Arial")
+Gui.F_service.lbl5.FontSize(8)
+Gui.F_service.lbl5.Backcolor(-2147483633)
+Gui.F_service.lbl5.BackStyle(0)
+Gui.F_service.lbl5.Tooltip("")
+Gui.F_service.lbl5.ControlGroup(0)
+
+
+Gui.F_service.lbl6.Create(label)
+Gui.F_service.lbl6.Caption("Filter by")
+Gui.F_service.lbl6.Visible(True)
+Gui.F_service.lbl6.Size(1185,255)
+Gui.F_service.lbl6.Zorder(1)
+Gui.F_service.lbl6.Position(8515,150)
+Gui.F_service.lbl6.Enabled(True)
+Gui.F_service.lbl6.Alignment(0)
+Gui.F_service.lbl6.FontName("Arial")
+Gui.F_service.lbl6.FontSize(8)
+Gui.F_service.lbl6.Backcolor(-2147483633)
+Gui.F_service.lbl6.BackStyle(0)
+Gui.F_service.lbl6.Tooltip("")
+Gui.F_service.lbl6.ControlGroup(0)
+
+
+Gui.F_service.ddlfversion.Create(dropdownlist)
+Gui.F_service.ddlfversion.Visible(True)
+Gui.F_service.ddlfversion.Size(1290,330)
+Gui.F_service.ddlfversion.Zorder(0)
+Gui.F_service.ddlfversion.Position(400,385)
+Gui.F_service.ddlfversion.Enabled(True)
+Gui.F_service.ddlfversion.FontName("Arial")
+Gui.F_service.ddlfversion.FontSize(9)
+Gui.F_service.ddlfversion.TabStop(True)
+Gui.F_service.ddlfversion.TabIndex(9)
+Gui.F_service.ddlfversion.Tooltip("")
+Gui.F_service.ddlfversion.ControlGroup(0)
+Gui.F_service.ddlfversion.DefaultValue("")
+
+Gui.F_service.ddlfversion.Event(click,ddlfversion_click)
+
+Gui.F_service.ddltversion.Create(dropdownlist)
+Gui.F_service.ddltversion.Visible(True)
+Gui.F_service.ddltversion.Size(1290,330)
+Gui.F_service.ddltversion.Zorder(0)
+Gui.F_service.ddltversion.Position(1900,385)
+Gui.F_service.ddltversion.Enabled(True)
+Gui.F_service.ddltversion.FontName("Arial")
+Gui.F_service.ddltversion.FontSize(9)
+Gui.F_service.ddltversion.TabStop(True)
+Gui.F_service.ddltversion.TabIndex(10)
+Gui.F_service.ddltversion.Tooltip("")
+Gui.F_service.ddltversion.ControlGroup(0)
+Gui.F_service.ddltversion.DefaultValue("")
+
+Gui.F_service.ddltversion.Event(click,ddltversion_click)
+
+Gui.F_service.ddlmodules.Create(dropdownlist)
+Gui.F_service.ddlmodules.Visible(False)
+Gui.F_service.ddlmodules.Size(2970,330)
+Gui.F_service.ddlmodules.Zorder(0)
+Gui.F_service.ddlmodules.Position(17000,600)
+Gui.F_service.ddlmodules.Enabled(True)
+Gui.F_service.ddlmodules.FontName("Arial")
+Gui.F_service.ddlmodules.FontSize(9)
+Gui.F_service.ddlmodules.TabStop(True)
+Gui.F_service.ddlmodules.TabIndex(11)
+Gui.F_service.ddlmodules.Tooltip("")
+Gui.F_service.ddlmodules.ControlGroup(0)
+Gui.F_service.ddlmodules.DefaultValue("")
+
+Gui.F_service.ddlmodules.Event(click,ddlmodules_click)
+
+Gui.F_service.lvwfilter.Create(listview)
+Gui.F_service.lvwfilter.Visible(True)
+Gui.F_service.lvwfilter.Size(2895,1333)
+Gui.F_service.lvwfilter.Zorder(0)
+Gui.F_service.lvwfilter.Position(8485,395)
+Gui.F_service.lvwfilter.Enabled(True)
+Gui.F_service.lvwfilter.BorderStyle(1)
+Gui.F_service.lvwfilter.FontName("Arial")
+Gui.F_service.lvwfilter.FontSize(9)
+Gui.F_service.lvwfilter.TabStop(True)
+Gui.F_service.lvwfilter.TabIndex(12)
+Gui.F_service.lvwfilter.Tooltip("")
+Gui.F_service.lvwfilter.View(2)
+
+
+Gui.F_service.txtmselection.Create(textbox)
+Gui.F_service.txtmselection.Text("")
+Gui.F_service.txtmselection.Visible(True)
+Gui.F_service.txtmselection.Size(2220,300)
+Gui.F_service.txtmselection.Zorder(0)
+Gui.F_service.txtmselection.Position(5700,405)
+Gui.F_service.txtmselection.Enabled(False)
+Gui.F_service.txtmselection.Alignment(0)
+Gui.F_service.txtmselection.FontName("Arial")
+Gui.F_service.txtmselection.FontSize(9)
+Gui.F_service.txtmselection.Backcolor(-2147483643)
+Gui.F_service.txtmselection.BorderStyle(1)
+Gui.F_service.txtmselection.TabStop(True)
+Gui.F_service.txtmselection.TabIndex(13)
+Gui.F_service.txtmselection.Tooltip("")
+Gui.F_service.txtmselection.ControlGroup(0)
+Gui.F_service.txtmselection.DefaultValue("")
+
+Gui.F_service.txtmselection.Event(change,txtmselection_change)
+
+Gui.F_service.cmdmsbrowse.Create(button)
+Gui.F_service.cmdmsbrowse.Caption("^")
+Gui.F_service.cmdmsbrowse.Visible(True)
+Gui.F_service.cmdmsbrowse.Size(375,330)
+Gui.F_service.cmdmsbrowse.Zorder(0)
+Gui.F_service.cmdmsbrowse.Position(7960,385)
+Gui.F_service.cmdmsbrowse.Enabled(False)
+Gui.F_service.cmdmsbrowse.FontName("Arial")
+Gui.F_service.cmdmsbrowse.FontSize(9)
+Gui.F_service.cmdmsbrowse.TabStop(True)
+Gui.F_service.cmdmsbrowse.TabIndex(14)
+Gui.F_service.cmdmsbrowse.Tooltip("")
+Gui.F_service.cmdmsbrowse.ControlGroup(0)
+Gui.F_service.cmdmsbrowse.DefaultValue("")
+
+Gui.F_service.cmdmsbrowse.Event(click,cmdmsbrowse_click)
+
+Gui.F_service.ddlselmodules.Create(dropdownlist)
+Gui.F_service.ddlselmodules.Visible(True)
+Gui.F_service.ddlselmodules.Size(2235,330)
+Gui.F_service.ddlselmodules.Zorder(0)
+Gui.F_service.ddlselmodules.Position(3360,385)
+Gui.F_service.ddlselmodules.Enabled(True)
+Gui.F_service.ddlselmodules.FontName("Arial")
+Gui.F_service.ddlselmodules.FontSize(9)
+Gui.F_service.ddlselmodules.TabStop(True)
+Gui.F_service.ddlselmodules.TabIndex(15)
+Gui.F_service.ddlselmodules.Tooltip("")
+Gui.F_service.ddlselmodules.ControlGroup(0)
+Gui.F_service.ddlselmodules.DefaultValue("")
+
+Gui.F_service.ddlselmodules.Event(click,ddlselmodules_click)
+
+Gui.F_service.lblselect.Create(label)
+Gui.F_service.lblselect.Caption("Selection type")
+Gui.F_service.lblselect.Visible(True)
+Gui.F_service.lblselect.Size(1305,255)
+Gui.F_service.lblselect.Zorder(1)
+Gui.F_service.lblselect.Position(3360,150)
+Gui.F_service.lblselect.Enabled(True)
+Gui.F_service.lblselect.Alignment(0)
+Gui.F_service.lblselect.FontName("Arial")
+Gui.F_service.lblselect.FontSize(8)
+Gui.F_service.lblselect.Backcolor(-2147483633)
+Gui.F_service.lblselect.BackStyle(0)
+Gui.F_service.lblselect.Tooltip("")
+Gui.F_service.lblselect.ControlGroup(0)
+
+
+Gui.F_service.mltxtcolselect.Create(textboxm)
+Gui.F_service.mltxtcolselect.Visible(True)
+Gui.F_service.mltxtcolselect.Size(21010,1140)
+Gui.F_service.mltxtcolselect.Zorder(0)
+Gui.F_service.mltxtcolselect.Position(400,9600)
+Gui.F_service.mltxtcolselect.Enabled(True)
+Gui.F_service.mltxtcolselect.Alignment(0)
+Gui.F_service.mltxtcolselect.FontName("Arial")
+Gui.F_service.mltxtcolselect.FontSize(9)
+Gui.F_service.mltxtcolselect.Backcolor(-2147483643)
+Gui.F_service.mltxtcolselect.BorderStyle(1)
+Gui.F_service.mltxtcolselect.MaxLength(0)
+Gui.F_service.mltxtcolselect.NumericOnly(0)
+Gui.F_service.mltxtcolselect.TabStop(True)
+Gui.F_service.mltxtcolselect.TabIndex(18)
+Gui.F_service.mltxtcolselect.Text("")
+Gui.F_service.mltxtcolselect.Tooltip("")
+Gui.F_service.mltxtcolselect.ControlGroup(0)
+Gui.F_service.mltxtcolselect.DefaultValue("")
+
+
+Gui.F_service.cmd3.Create(button)
+Gui.F_service.cmd3.Caption("recordset")
+Gui.F_service.cmd3.Visible(False)
+Gui.F_service.cmd3.Size(1485,570)
+Gui.F_service.cmd3.Zorder(0)
+Gui.F_service.cmd3.Position(13300,100)
+Gui.F_service.cmd3.Enabled(True)
+Gui.F_service.cmd3.FontName("Arial")
+Gui.F_service.cmd3.FontSize(9)
+Gui.F_service.cmd3.TabStop(True)
+Gui.F_service.cmd3.TabIndex(19)
+Gui.F_service.cmd3.Tooltip("")
+Gui.F_service.cmd3.ControlGroup(0)
+Gui.F_service.cmd3.DefaultValue("")
+
+Gui.F_service.cmd3.Event(click,cmdtemp_click)
+
+Gui.F_service.chksearchresult.Create(checkbox)
+Gui.F_service.chksearchresult.Alignment(0)
+Gui.F_service.chksearchresult.Caption("show only search result")
+Gui.F_service.chksearchresult.Visible(True)
+Gui.F_service.chksearchresult.Size(3045,255)
+Gui.F_service.chksearchresult.Zorder(0)
+Gui.F_service.chksearchresult.Position(1700,950)
+Gui.F_service.chksearchresult.Enabled(True)
+Gui.F_service.chksearchresult.FontName("Arial")
+Gui.F_service.chksearchresult.FontSize(9)
+Gui.F_service.chksearchresult.TabStop(True)
+Gui.F_service.chksearchresult.TabIndex(20)
+Gui.F_service.chksearchresult.Tooltip("")
+Gui.F_service.chksearchresult.ControlGroup(0)
+Gui.F_service.chksearchresult.DefaultValue("")
+
+
+Gui.F_service.fghide.Create(gsflexgrid)
+Gui.F_service.fghide.Visible(False)
+Gui.F_service.fghide.Size(20925,7515)
+Gui.F_service.fghide.Zorder(0)
+Gui.F_service.fghide.Position(405,1830)
+Gui.F_service.fghide.Enabled(True)
+Gui.F_service.fghide.FixedRows(0)
+Gui.F_service.fghide.FixedCols(0)
+
+
+Gui.F_service.fgsearch.Create(gsflexgrid)
+Gui.F_service.fgsearch.Visible(True)
+Gui.F_service.fgsearch.Size(20970,7680)
+Gui.F_service.fgsearch.Zorder(0)
+Gui.F_service.fgsearch.Position(405,1800)
+Gui.F_service.fgsearch.Enabled(True)
+Gui.F_service.fgsearch.FixedRows(1)
+Gui.F_service.fgsearch.FixedCols(0)
+
+Gui.F_service.fgsearch.Event(mousedown,fgsearch_mousedown)
+Gui.F_service.fgsearch.Event(mouseup,fgsearch_mouseup)
+
+Gui.F_service.htmlcontainer.Create(htmlcontainer)
+Gui.F_service.htmlcontainer.Visible(True)
+Gui.F_service.htmlcontainer.Size(12405,10380)
+Gui.F_service.htmlcontainer.Zorder(0)
+Gui.F_service.htmlcontainer.Position(300,285)
+Gui.F_service.htmlcontainer.Parent("frame_container")
+Gui.F_service.htmlcontainer.TabStop(False)
+Gui.F_service.htmlcontainer.TabIndex(22)
+
+
+Gui.F_service.cmdclose.Create(button)
+Gui.F_service.cmdclose.Caption("Exit")
+Gui.F_service.cmdclose.Visible(True)
+Gui.F_service.cmdclose.Size(855,375)
+Gui.F_service.cmdclose.Zorder(0)
+Gui.F_service.cmdclose.Position(12840,285)
+Gui.F_service.cmdclose.Enabled(True)
+Gui.F_service.cmdclose.FontName("Arial")
+Gui.F_service.cmdclose.FontSize(9)
+Gui.F_service.cmdclose.Parent("frame_container")
+Gui.F_service.cmdclose.TabStop(True)
+Gui.F_service.cmdclose.TabIndex(23)
+Gui.F_service.cmdclose.Tooltip("")
+Gui.F_service.cmdclose.ControlGroup(0)
+Gui.F_service.cmdclose.DefaultValue("")
+
+Gui.F_service.cmdclose.Event(click,cmdclose_click)
+
+gui.F_service..minx(0)
+gui.F_service..miny(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.UDT_SW.Define("Iss_desc",String,Description)
+Variable.UDT.UDT_SW.Define("Iss_extradesc",String,ExtDesc)
+Variable.UDT.UDT_SW.Define("iss_menu",String,GroupIssue)
+Variable.UDT.UDT_SW.Define("Iss_version",Float,GS_Version)
+Variable.UDT.UDT_SW.Define("Iss_no",Long,issueno)
+Variable.UDT.UDT_SW.Define("Iss_notes",String,issue_notes)
+Variable.UDT.UDT_SW.Define("Iss_feature",String,Feature)
+Variable.UDT.UDT_SW.Define("Iss_hfix",String,MakeHF)
+Variable.uGlobal.UDT_SW.Declare("UDT_SW")
+
+Variable.UDT.UDT_Files.Define("filename",String,filename)
+Variable.UDT.UDT_Files.Define("Issueno",Long,Issueno)
+Variable.UDT.UDT_Files.Define("directory",String,directory)
+Variable.UDT.UDT_Files.Define("sdirectory",String,sdirectory)
+Variable.uGlobal.UDT_Files.Declare("UDT_Files")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+' RAN 07/22/2015
+' Project Name:  Service web Issues
+
+
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.j.Declare(Long)
+
+V.global.lRowsel.Declare(Long)
+V.global.lcRowsel.Declare(Long)
+V.global.bProcess.Declare(Boolean)
+'chk parameter change to fetch data
+V.global.bFetchdata.Declare(Boolean)
+'last search results row(s)
+V.global.sLastsearchresult.Declare(String)
+V.global.bProgsearch.Declare(Boolean)
+V.global.bProgstart.Declare(Boolean)
+
+V.Local.sSql.Declare(String)
+
+'F.Intrinsic.UI.Msgbox(Variable.Ambient.IsInIDE)
+
+Gui.F_service.frame_container.Visible(false)
+
+Function.Intrinsic.UI.InvokeWaitDialog("Loading data. please wait ...")
+
+Gui.F_service.lvwfilter.Checkboxes(true)
+Gui.F_service.lvwfilter.AddListItem(0,"Description")
+Gui.F_service.lvwfilter.AddListItem(1,"Extra Description")
+Gui.F_service.lvwfilter.AddListItem(2,"Notes")
+Gui.F_service.lvwfilter.AddListItem(3,"Program")
+
+Gui.F_service.lvwfilter.ListItemCheck(0,True)
+Gui.F_service.lvwfilter.ListItemCheck(1,True)
+Gui.F_service.lvwfilter.ListItemCheck(2,True)
+Gui.F_service.lvwfilter.ListItemCheck(3,True)
+
+Gui.F_service.ddlselmodules.AddItem("None")
+Gui.F_service.ddlselmodules.AddItem("Modules")
+Gui.F_service.ddlselmodules.Additem("Menu Selection ID")
+Gui.F_service.ddlselmodules.ListIndex(0)
+
+Gui.F_service.mltxtcolselect.Locked(true)
+
+Gui.F_service..Size(21950,14460)
+
+'Gui.F_service.lvwfilter.Size(2445,1400)
+
+'F.Intrinsic.Debug.InvokeDebugger
+
+
+F.Intrinsic.Control.CallSub(Buildstyle_fgsearch)
+
+
+
+'
+
+F.ODBC.Misc.SwitchIHOPCreds("ISSUE")
+F.ODBC.Connection!con.OpenConnection(V.Ambient.Icon,V.Ambient.IUser,V.Ambient.IPass)
+
+'Connection for PCC(Pervasive)
+'F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+
+V.Local.sSql.Set("select top 4 GS_version  from si_version where verrelease_dt <> '' order by GS_version desc")
+
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+	Gui.F_service.ddlfversion.AddItem(V.ODBC.con!rst.FieldValtrim!GS_version)
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.con!rst.Close
+
+Gui.F_service.ddlfversion.ListIndex(0)
+'
+
+'V.Local.sSql.Set("select module_id,Module,module_title from MENU_MODULE order by  module_title")
+'
+'F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+'
+'Gui.F_service.ddlmodules.AddItem("")
+'F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+'	Gui.F_service.ddlmodules.AddItem(V.ODBC.con!rst.FieldValtrim!module_title)
+'	F.ODBC.con!rst.MoveNext
+'F.Intrinsic.Control.Loop
+'F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.CallSub(Buildstyle_fgfiles)
+
+V.global.bProgstart.Set(True)
+F.Intrinsic.Control.CallSub(Cmdsearch_click)
+V.global.bProgstart.Set(False)
+Function.Intrinsic.UI.CloseWaitDialog
+
+Gui.F_service..Show
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: SW_ISSUE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.UI.CloseWaitDialog
+Function.Intrinsic.Control.EndIf
+
+
+
+
+
+
+Program.Sub.Main.End
+
+Program.Sub.F_service_Unload.Start
+
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+Program.Sub.F_service_Unload.End
+
+program.sub.cmdtemp_click.start
+'************** search alternate method
+
+V.Local.sError.Declare(String)
+V.Local.sText.Declare(String)
+V.Local.ssql.Declare(String)
+V.Local.sssql.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+'F.Intrinsic.Debug.InvokeDebugger
+'
+
+V.Local.l_rows.Declare(Long)
+V.Local.l_currow.Declare(Long)
+V.Local.bretval.Declare(Boolean)
+V.Local.sRet.Declare(String)
+V.Local.bSearch.Declare(Boolean)
+
+V.Local.sText.Set(V.Screen.F_service!txtsearch.Text)
+
+Gui.F_service.lblfiles.Caption("Files")
+
+F.Intrinsic.Control.If(V.Screen.F_service!ddlfversion.ListIndex,<,0)
+	F.Intrinsic.UI.Msgbox("Please select Global shop version #")
+	Gui.F_service.ddlfversion.SetFocus
+	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.elseIf(V.Screen.F_service!ddlselmodules.ListIndex,<,1)
+'	F.Intrinsic.UI.Msgbox("Please select the module")
+'	Gui.F_service.ddlselmodules.SetFocus
+'	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endif
+
+
+F.Intrinsic.Control.If(V.Screen.F_service!ddlselmodules.ListIndex,=,1)
+	F.Intrinsic.Control.If(V.Screen.F_service!ddlmodules.ListIndex,<,0)
+		F.Intrinsic.UI.Msgbox("Please select the module from the list")
+		Gui.F_service.ddlmodules.SetFocus
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Screen.F_service!ddlselmodules.ListIndex,=,2)
+	F.Intrinsic.Control.If(V.Screen.F_service!txtmselection.Text,=,"")
+		F.Intrinsic.UI.Msgbox("Please enter module ID")
+		Gui.F_service.txtmselection.SetFocus
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(" and Menu_SelID = ",V.Screen.F_service!txtmselection.text,"",V.Local.sssql)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+Gui.F_service.lvwfilter.RetrieveCheckedListItems(V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sText.Trim,<>,"")
+	F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+		F.Intrinsic.UI.Msgbox("Please select the fields to filter by","Invalid Selection")
+		Gui.F_service.lvwfilter.SetFocus
+	F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.sRet.trim,<>,"***NORETURN***")
+'		F.Intrinsic.UI.Msgbox(V.Local.sRet)
+		F.Intrinsic.UI.Msgbox("Please enter search text")
+		Gui.F_service.txtsearch.SetFocus
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.F_service!ddlfversion.ListIndex,<,0)
+'	F.Intrinsic.UI.Msgbox("Please select Global shop version #")
+'	Gui.F_service.ddlfversion.SetFocus
+'	F.Intrinsic.Control.ExitSub
+''F.Intrinsic.Control.elseIf(V.Screen.F_service!ddlselmodules.ListIndex,<,1)
+''	F.Intrinsic.UI.Msgbox("Please select the module")
+''	Gui.F_service.ddlselmodules.SetFocus
+''	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.endif
+'
+'
+'F.Intrinsic.Control.If(V.Screen.F_service!ddlselmodules.ListIndex,=,1)
+'	F.Intrinsic.Control.If(V.Screen.F_service!ddlmodules.ListIndex,<,0)
+'		F.Intrinsic.UI.Msgbox("Please select the module from the list")
+'		Gui.F_service.ddlmodules.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.ElseIf(V.Screen.F_service!ddlselmodules.ListIndex,=,2)
+'	F.Intrinsic.Control.If(V.Screen.F_service!txtmselection.Text,=,"")
+'		F.Intrinsic.UI.Msgbox("Please enter module ID")
+'		Gui.F_service.txtmselection.SetFocus
+'		F.Intrinsic.Control.ExitSub
+'	F.Intrinsic.Control.Else
+'		F.Intrinsic.String.Concat(" and Menu_SelID = ",V.Screen.F_service!txtmselection.text,"",V.Local.sssql)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+'
+''F.Intrinsic.Control.If(V.Local.sText.Trim,=,"")
+''	F.Intrinsic.UI.Msgbox("Please enter search text")
+''	Gui.F_service.txtsearch.SetFocus
+''	F.Intrinsic.Control.ExitSub
+''F.Intrinsic.Control.EndIf
+'
+''F.Intrinsic.Debug.InvokeDebugger
+''F.Intrinsic.Debug.Stop
+'
+'Gui.F_service.lvwfilter.RetrieveCheckedListItems(V.Local.sRet)
+'F.Intrinsic.UI.Msgbox(V.Local.sRet)
+'F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+'	F.Intrinsic.UI.Msgbox("Please select the fields to filter by","Invalid Selection")
+'	Gui.F_service.lvwfilter.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+'
+''F.Intrinsic.UI.Msgbox(V.Screen.F_service!radmodule.Value)
+'
+'
+''F.Intrinsic.UI.Msgbox(V.Local.sssql)
+
+
+F.Intrinsic.String.Concat(" select issueno,issue_notes,description,groupissue,extdesc,makehf,gs_version  from si_issue where gs_version between  '",V.Screen.F_service!ddlfversion.Text,"' and '",V.Screen.F_service!ddltversion.Text,"'",V.Local.sssql," order by issueno",V.Local.sSql)
+
+'F.Intrinsic.UI.Msgbox(V.Local.ssql)
+'
+
+'F.Intrinsic.Debug.InvokeDebugger
+'
+
+
+'
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+
+Gui.F_service.fgsearch.Rows(1)
+Gui.F_service.fgfiles.Rows(1)
+V.Local.l_rows.Set(1)
+
+'show fghide grid while data loading on fgsearch grid
+Gui.F_service.fghide.Visible(true)
+Gui.F_service.fgsearch.Visible(false)
+
+F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+	V.Local.l_currow.Set(V.Local.l_rows)
+
+	F.Intrinsic.Math.Add(V.Local.l_rows,1,V.Local.l_rows)
+	Gui.F_service.fgsearch.Rows(V.Local.l_rows)
+	Gui.F_service.fgsearch.ApplyStyle(V.Local.l_currow,1)
+'	Gui.F_service.fgsearch.RowHeight(V.Local.l_currow,850)
+
+
+	Gui.F_service.fgsearch.TextMatrix(0,V.Local.l_currow,V.ODBC.con!rst.FieldValtrim!issueno)
+
+	Gui.F_service.fgsearch.TextMatrix(1,V.Local.l_currow,V.ODBC.con!rst.FieldValtrim!description)
+	F.Intrinsic.String.IsInString(V.Local.sRet,"0",True,V.Local.bretval)
+	F.Intrinsic.Control.If(V.Local.bretval,=,True)
+		F.Intrinsic.String.IsInString(V.ODBC.con!rst.FieldValtrim!description,V.Screen.F_service!txtsearch.Text,True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,=,True)
+			Gui.F_service.fgsearch.ApplyStyle(V.Local.l_currow,2)
+			V.Local.bSearch.Set(True)
+		F.Intrinsic.Control.Endif
+	F.Intrinsic.Control.Endif
+
+
+	Gui.F_service.fgsearch.TextMatrix(2,V.Local.l_currow,V.ODBC.con!rst.FieldValtrim!extdesc)
+	F.Intrinsic.Control.If(V.Local.bSearch,=,False)
+		F.Intrinsic.String.IsInString(V.Local.sRet,"1",True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,=,True)
+			F.Intrinsic.String.IsInString(V.ODBC.con!rst.FieldValtrim!extdesc,V.Screen.F_service!txtsearch.Text,True,V.Local.bretval)
+			F.Intrinsic.Control.If(V.Local.bretval,=,True)
+				Gui.F_service.fgsearch.ApplyStyle(V.Local.l_currow,2)
+				V.Local.bSearch.Set(True)
+			F.Intrinsic.Control.Endif
+		F.Intrinsic.Control.Endif
+	F.Intrinsic.Control.Endif
+
+
+	Gui.F_service.fgsearch.TextMatrix(3,V.Local.l_currow,V.ODBC.con!rst.FieldValtrim!groupissue)
+
+	Gui.F_service.fgsearch.TextMatrix(4,V.Local.l_currow,V.ODBC.con!rst.FieldValtrim!issue_notes)
+	F.Intrinsic.Control.If(V.Local.bSearch,=,False)
+		F.Intrinsic.String.IsInString(V.Local.sRet,"2",True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,=,True)
+			F.Intrinsic.String.IsInString(V.ODBC.con!rst.FieldValtrim!issue_notes,V.Screen.F_service!txtsearch.Text,True,V.Local.bretval)
+			F.Intrinsic.Control.If(V.Local.bretval,=,True)
+				Gui.F_service.fgsearch.ApplyStyle(V.Local.l_currow,2)
+				V.Local.bSearch.Set(True)
+			F.Intrinsic.Control.Endif
+		F.Intrinsic.Control.Endif
+	F.Intrinsic.Control.Endif
+
+
+	Gui.F_service.fgsearch.TextMatrix(5,V.Local.l_currow,V.ODBC.con!rst.FieldValtrim!gs_version)
+'	F.Intrinsic.Debug.SetLA(V.ODBC.con!rst.FieldValtrim!gs_version)
+
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+
+
+'	F.Intrinsic.UI.Msgbox(V.ODBC.con!rst.FieldType!makehf)
+
+	F.Intrinsic.Control.If(V.ODBC.con!rst.FieldVal!makehf,=,False)
+		Gui.F_service.fgsearch.TextMatrix(6,V.Local.l_currow,"No")
+	F.Intrinsic.Control.Else
+		Gui.F_service.fgsearch.TextMatrix(6,V.Local.l_currow,"Yes")
+	F.Intrinsic.Control.Endif
+
+	V.Local.bSearch.set(False)
+	F.ODBC.con!rst.MoveNext
+F.Intrinsic.Control.Loop
+
+F.ODBC.con!rst.Close
+
+'F.Intrinsic.Debug.InvokeDebugger
+'
+
+Gui.F_service.fgsearch.Visible(true)
+Gui.F_service.fghide.Visible(false)
+' r Gui.F_service.fgsearch.ApplyStyle(0,5)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+program.sub.cmdtemp_click.end
+
+Program.sub.ddlfversion_click.start
+V.Local.i.Declare(Long)
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+'F.Intrinsic.UI.Msgbox(V.Screen.F_service!ddlfversion.ListIndex)
+
+'F.Intrinsic.Debug.InvokeDebugger
+'
+Gui.F_service.ddltversion.ClearItems
+
+F.Intrinsic.Control.For(V.Local.i,0,V.Screen.F_service!ddlfversion.ListIndex,1)
+	Gui.F_service.ddltversion.AddItem(V.Screen.F_service!ddlfversion.List(V.Local.i))
+F.Intrinsic.Control.Next(V.Local.i)
+
+
+Gui.F_service.ddltversion.Text(V.Screen.F_service!ddlfversion.Text)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+
+
+Program.sub.ddlfversion_click.end
+
+program.sub.fgsearch_mouseup.start
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTxt.Declare(String)
+V.Local.sTxt1.Declare(String)
+V.Local.l_currow.Declare(Long)
+V.Local.l_rows.Declare(Long)
+V.Local.bretval.Declare(Boolean)
+V.Local.sRet.Declare(String)
+V.Local.bretval2.Declare(Boolean)
+
+
+
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+'F.Intrinsic.UI.Msgbox(V.Screen.F_service!fgsearch.Row)
+
+
+
+
+
+F.Intrinsic.Control.If(V.global.bProgsearch,=,False)
+	F.Intrinsic.Control.If(V.Screen.F_service!fgsearch.row,=,0)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	Gui.F_service.fgsearch.GetTextMatrix(V.Screen.F_service!fgsearch.Col,V.Screen.F_service!fgsearch.row,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.trim,=,"")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	'CTRLF
+
+'	F.Intrinsic.String.Replace(V.Local.sRet,"CRLF",". ",V.Local.sRet)
+
+	F.Intrinsic.String.Replace(V.Local.sRet,"CRLF",V.Ambient.NewLine,V.Local.sRet)
+
+	Gui.F_service.mltxtcolselect.text(V.Local.sRet)
+
+	''disable mouseup event while scrolling
+	'F.Intrinsic.Control.If(V.Screen.F_service!fgsearch.col,=,6)
+	'	F.Intrinsic.Control.ExitSub
+	'F.Intrinsic.Control.EndIf
+
+
+	'exit if same row clicked again
+	F.Intrinsic.Control.If(V.Global.lRowsel,=,V.Screen.F_service!fgsearch.Row)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.endif
+
+	'disable mouseup event while scrolling flexgrid
+	F.Intrinsic.Control.If(V.Args.Mouserow.long,<>,V.Screen.F_service!fgsearch.Row)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Endif
+F.Intrinsic.Control.Endif
+
+Gui.F_service.fgfiles.Rows(1)
+
+'Function.Intrinsic.UI.InvokeWaitDialog("Loading data. please wait ...")
+Gui.F_service..MousePointer(11)
+Gui.F_service.fgsearch.Enabled(false)
+
+'
+'
+V.global.lcRowsel.Set(V.Screen.F_service!fgsearch.Row)
+F.Intrinsic.Control.If(V.Global.lRowsel,>,0)
+	Gui.F_service.fgsearch.ApplyStyle(V.global.lRowsel,4)
+F.Intrinsic.Control.EndIf
+Gui.F_service.fgsearch.ApplyStyle(V.global.lcRowsel,3)
+'store last clicked row
+V.global.lRowsel.Set(V.Screen.F_service!fgsearch.Row)
+
+Gui.F_service.fgsearch.GetTextMatrix(0,V.Screen.F_service!fgsearch.row,V.Local.sTxt)
+
+F.Intrinsic.String.Concat("Files for Issue No : ",V.Local.sTxt.Trim,V.Local.sRet)
+
+Gui.F_service.lblfiles.Caption(V.Local.sRet)
+'
+
+'Gui.F_service.fgfiles.Rows(50)
+Gui.F_service.fgfiles.Visible(false)
+
+'F.Intrinsic.Debug.Stop
+V.Local.issno.Declare(String)
+V.local.sReturn.Declare(String)
+V.Local.k.Declare(Long)
+
+
+Gui.F_service.fgsearch.GetTextMatrix(0,V.Screen.F_service!fgsearch.Row,V.Local.issno)
+
+F.Intrinsic.Variable.UDTSeek(V.uglobal.UDT_Files!Issueno,V.Local.issno,2,V.local.sReturn)
+F.Intrinsic.Control.If(V.local.sReturn.Trim,<>,"")
+	F.Intrinsic.String.Split(V.local.sReturn,"*!*",V.local.sReturn)
+	F.Intrinsic.Math.Add(V.local.sReturn.UBound,2,V.Local.l_rows)
+	Gui.F_service.fgfiles.Rows(V.Local.l_rows)
+
+	V.Local.l_rows.Set(1)
+	F.Intrinsic.Control.For(V.Local.k,V.local.sReturn.LBound,V.local.sReturn.UBound,1)
+		V.Local.l_currow.Set(V.Local.l_rows)
+		F.Intrinsic.Math.Add(V.Local.l_rows,1,V.Local.l_rows)
+'		Gui.F_service.fgfiles.Rows(V.Local.l_rows)
+'		F.Intrinsic.UI.Msgbox(V.Local.l_currow)
+		Gui.F_service.fgfiles.ApplyStyle(V.Local.l_currow,1)
+		Gui.F_service.fgfiles.TextMatrix(0,V.Local.l_currow,V.uGlobal.UDT_files(V.local.sReturn(V.Local.k))!directory)
+		Gui.F_service.fgfiles.TextMatrix(1,V.Local.l_currow,V.uGlobal.UDT_files(V.local.sReturn(V.Local.k))!filename)
+		V.Local.sTxt.Set(V.Screen.F_service!txtsearch.Text)
+		V.Local.sTxt1.Set(V.uGlobal.UDT_files(V.local.sReturn(V.Local.k))!filename.Trim)
+		F.Intrinsic.String.LCase(V.Local.sTxt,V.Local.sTxt.trim)
+		F.Intrinsic.String.LCase(V.Local.sTxt1,V.Local.sTxt1)
+		F.Intrinsic.Control.If(V.Local.sTxt,=,V.Local.sTxt1)
+			Gui.F_service.fgfiles.ApplyStyle(V.Local.l_currow,2)
+		F.Intrinsic.Control.endif
+		Gui.F_service.fgfiles.TextMatrix(2,V.Local.l_currow,V.uGlobal.UDT_files(V.local.sReturn(V.Local.k))!sdirectory)
+	F.Intrinsic.Control.Next(V.Local.k)
+F.Intrinsic.Control.endif
+
+
+'****************************************
+
+Gui.F_service.fgfiles.Visible(true)
+Gui.F_service.fgfiles.FixedRows(1)
+
+Gui.F_service..MousePointer(0)
+
+Gui.F_service.fgsearch.Enabled(true)
+'Function.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Gui.F_service..MousePointer(0)
+'	Function.Intrinsic.UI.CloseWaitDialog
+	Gui.F_service.fgsearch.Enabled(true)
+F.Intrinsic.Control.endif
+
+program.sub.fgsearch_mouseup.end
+
+program.sub.cmdmsbrowse_click.start
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_service!ddlselmodules.ListIndex,=,1)
+	V.Local.sTitles.Set("Id*!*Module*!*Module Selection")
+	V.Local.sSql.Set("select module_id,Module,module_title from MENU_MODULE order by  module_title")
+F.Intrinsic.Control.elseIf(V.Screen.F_service!ddlselmodules.ListIndex,=,2)
+	V.Local.sTitles.Set("Id*!*SequenceID*!*Menu Selection")
+	V.Local.sSql.Set("Select  selection_id,sequence,title from menu_selections ORDER BY  selection_id,sequence")
+F.Intrinsic.Control.EndIf
+
+V.Local.sWidths.Set("700*!*1300*!*2700")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'F.Intrinsic.UI.Browser("Selet Menu Selection","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,3000,8000,V.Local.sRet)
+F.Intrinsic.UI.Browser("Selection","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'	Gui.F_service.txtmselection.Text(V.Local.sRet(0).Trim)
+	Gui.F_service.txtmselection.Text(V.Local.sRet(2).Trim)
+	Gui.F_service.txtmselection.SetMetaData(V.Local.sRet(0),V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+program.sub.cmdmsbrowse_click.end
+
+Program.Sub.buildstyle_fgsearch.Start
+V.Local.sError.Declare(String)
+
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.j.Declare(Long)
+
+
+Gui.F_service.fgsearch.Rows(1)
+Gui.F_service.fgsearch.FixedRows(1)
+Gui.F_service.fgsearch.Cols(8)
+'Gui.F_service.fgsearch.Rows(1)
+''Gui.F_service.fgsearch.RowHeight(0,350)
+
+Gui.F_service.fghide.Rows(1)
+Gui.F_service.fghide.FixedRows(1)
+Gui.F_service.fghide.Cols(8)
+
+Gui.F_service.fgsearch.TextMatrix(0,0,"Issues")
+Gui.F_service.fgsearch.TextMatrix(1,0,"Description")
+Gui.F_service.fgsearch.TextMatrix(2,0,"Extra description")
+Gui.F_service.fgsearch.TextMatrix(3,0,"Menu Path")
+Gui.F_service.fgsearch.TextMatrix(4,0,"Notes")
+Gui.F_service.fgsearch.TextMatrix(5,0,"Version")
+Gui.F_service.fgsearch.TextMatrix(6,0,"H/F")
+Gui.F_service.fgsearch.TextMatrix(7,0,"Feature")
+
+Gui.F_service.fgsearch.SetColumnPercentages(".03:.22:.20:.17:.25:.04:.03:.04")
+
+
+F.Intrinsic.Control.For(V.Local.j,0,7,1)
+	Gui.F_service.fgsearch.BuildStyle(1,V.Local.j,"type","locked",True)
+	Gui.F_service.fgsearch.BuildStyle(1,V.Local.j,"Format","alignment",2)
+F.Intrinsic.Control.Next(V.Local.j)
+
+'style for search results
+F.Intrinsic.Control.For(V.Local.j,1,7,1)
+	Gui.F_service.fgsearch.BuildStyle(2,V.Local.j,"type","locked",True)
+	Gui.F_service.fgsearch.BuildStyle(2,V.Local.j,"Color","Back",V.Color.LtGray)
+	Gui.F_service.fgsearch.BuildStyle(2,V.Local.j,"Format","alignment",2)
+F.Intrinsic.Control.Next(V.Local.j)
+
+'style for search results
+F.Intrinsic.Control.For(V.Local.j,0,7,1)
+	Gui.F_service.fghide.BuildStyle(2,V.Local.j,"type","locked",True)
+	Gui.F_service.fghide.BuildStyle(2,V.Local.j,"Color","Back",V.Color.LtGray)
+	Gui.F_service.fghide.BuildStyle(2,V.Local.j,"Format","alignment",2)
+F.Intrinsic.Control.Next(V.Local.j)
+
+'style for row selection
+F.Intrinsic.Control.For(V.Local.j,0,0,1)
+	Gui.F_service.fgsearch.BuildStyle(3,V.Local.j,"type","locked",True)
+	Gui.F_service.fgsearch.BuildStyle(3,V.Local.j,"Format","alignment",2)
+	Gui.F_service.fgsearch.BuildStyle(3,V.Local.j,"Color","Back",V.Color.SEC-GSS-02)
+F.Intrinsic.Control.Next(V.Local.j)
+
+'F.Intrinsic.Control.For(V.Local.j,0,6,1)
+'	Gui.F_service.fgsearch.BuildStyle(3,V.Local.j,"type","locked",True)
+'	Gui.F_service.fgsearch.BuildStyle(3,V.Local.j,"Format","alignment",1)
+'	Gui.F_service.fgsearch.BuildStyle(3,V.Local.j,"Color","Back",V.Color.SEC-GSS-02)
+'F.Intrinsic.Control.Next(V.Local.j)
+
+
+'style for row deselect
+F.Intrinsic.Control.For(V.Local.j,0,0,1)
+	Gui.F_service.fgsearch.BuildStyle(4,V.Local.j,"type","locked",True)
+	Gui.F_service.fgsearch.BuildStyle(4,V.Local.j,"Format","alignment",2)
+	Gui.F_service.fgsearch.BuildStyle(4,V.Local.j,"Color","Back",V.Color.White)
+F.Intrinsic.Control.Next(V.Local.j)
+
+'F.Intrinsic.Control.For(V.Local.j,0,6,1)
+'	Gui.F_service.fgsearch.BuildStyle(4,V.Local.j,"type","locked",True)
+'	Gui.F_service.fgsearch.BuildStyle(4,V.Local.j,"Format","alignment",1)
+'	Gui.F_service.fgsearch.BuildStyle(4,V.Local.j,"Color","Back",V.Color.White)
+'F.Intrinsic.Control.Next(V.Local.j)
+
+'style for header row
+F.Intrinsic.Control.For(V.Local.j,0,7,1)
+	Gui.F_service.fgsearch.BuildStyle(5,V.Local.j,"type","locked",True)
+	Gui.F_service.fgsearch.BuildStyle(5,V.Local.j,"Format","alignment",2)
+	Gui.F_service.fgsearch.BuildStyle(5,V.Local.j,"fontstyle","bold",True)
+F.Intrinsic.Control.Next(V.Local.j)
+
+
+'style for reset search
+F.Intrinsic.Control.For(V.Local.j,1,7,1)
+	Gui.F_service.fgsearch.BuildStyle(6,V.Local.j,"type","locked",True)
+	Gui.F_service.fgsearch.BuildStyle(6,V.Local.j,"Color","Back",V.Color.White)
+	Gui.F_service.fgsearch.BuildStyle(6,V.Local.j,"Format","alignment",2)
+F.Intrinsic.Control.Next(V.Local.j)
+
+
+Gui.F_service.fgsearch.ApplyStyle(0,5)
+
+'F.Intrinsic.Debug.Stop
+
+'display flexgrid while data loading on main flexgrid
+'Gui.F_service.fghide.Rows(1)
+'Gui.F_service.fghide.FixedRows(1)
+'Gui.F_service.fghide.Cols(8)
+
+'style for header row
+F.Intrinsic.Control.For(V.Local.j,0,7,1)
+	Gui.F_service.fghide.BuildStyle(7,V.Local.j,"type","locked",True)
+	Gui.F_service.fghide.BuildStyle(7,V.Local.j,"Format","alignment",2)
+	Gui.F_service.fghide.BuildStyle(7,V.Local.j,"fontstyle","bold",True)
+F.Intrinsic.Control.Next(V.Local.j)
+
+Gui.F_service.fghide.ApplyStyle(0,7)
+
+
+'Gui.F_service.fgsearch.Rows(1)
+'Gui.F_service.fgsearch.FixedRows(1)
+'Gui.F_service.fghide.RowHeight(0,350)
+
+Gui.F_service.fghide.TextMatrix(0,0,"Issues")
+Gui.F_service.fghide.TextMatrix(1,0,"Description")
+Gui.F_service.fghide.TextMatrix(2,0,"Extra description")
+Gui.F_service.fghide.TextMatrix(3,0,"Menu Path")
+Gui.F_service.fghide.TextMatrix(4,0,"Notes")
+Gui.F_service.fghide.TextMatrix(5,0,"Version")
+Gui.F_service.fghide.TextMatrix(6,0,"H/F")
+Gui.F_service.fghide.TextMatrix(7,0,"Feature")
+Gui.F_service.fghide.ApplyStyle(0,5)
+
+Gui.F_service.fghide.SetColumnPercentages(".03:.22:.20:.17:.25:.03:.03:.05")
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+Program.Sub.buildstyle_fgsearch.End
+
+Program.Sub.buildstyle_fgfiles.Start
+V.Local.sError.Declare(String)
+V.Local.j.Declare(Long)
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+Gui.F_service.fgfiles.Rows(1)
+Gui.F_service.fgfiles.FixedRows(1)
+Gui.F_service.fgfiles.Cols(4)
+'Gui.F_service.fgfiles.Rows(1)
+'Gui.F_service.fgfiles.RowHeight(0,350)
+
+Gui.F_service.fgfiles.TextMatrix(0,0,"File Path")
+Gui.F_service.fgfiles.TextMatrix(1,0,"Program")
+Gui.F_service.fgfiles.TextMatrix(2,0,"Directory")
+Gui.F_service.fgfiles.TextMatrix(3,0,"Source Notes")
+
+Gui.F_service.fgfiles.SetColumnPercentages(".25:.30:.30:.10")
+
+F.Intrinsic.Control.For(V.Local.j,0,2,1)
+	Gui.F_service.fgfiles.BuildStyle(1,V.Local.j,"type","locked",True)
+	Gui.F_service.fgfiles.BuildStyle(1,V.Local.j,"Format","alignment",2)
+F.Intrinsic.Control.Next(V.Local.j)
+Gui.F_service.fgfiles.BuildStyle(1,3,"Format","alignment",2)
+Gui.F_service.fgfiles.BuildStyle(1,3,"type","command","Source Notes")
+
+'style for search results
+F.Intrinsic.Control.For(V.Local.j,0,2,1)
+	Gui.F_service.fgfiles.BuildStyle(2,V.Local.j,"type","locked",True)
+	Gui.F_service.fgfiles.BuildStyle(2,V.Local.j,"Color","Back",V.Color.LtGray)
+	Gui.F_service.fgfiles.BuildStyle(2,V.Local.j,"Format","alignment",2)
+	Gui.F_service.fgfiles.BuildStyle(2,V.Local.j,"fontstyle","bold",True)
+F.Intrinsic.Control.Next(V.Local.j)
+Gui.F_service.fgfiles.BuildStyle(2,3,"Format","alignment",2)
+Gui.F_service.fgfiles.BuildStyle(2,3,"type","command","Source Notes")
+
+'style for header row
+F.Intrinsic.Control.For(V.Local.j,0,3,1)
+	Gui.F_service.fgfiles.BuildStyle(3,V.Local.j,"type","locked",True)
+	Gui.F_service.fgfiles.BuildStyle(3,V.Local.j,"Format","alignment",2)
+	Gui.F_service.fgfiles.BuildStyle(3,V.Local.j,"fontstyle","bold",True)
+F.Intrinsic.Control.Next(V.Local.j)
+'Gui.F_service.fgfiles.BuildStyle(3,3,"type","command","Source Notes")
+
+Gui.F_service.fgfiles.FixedRows(1)
+Gui.F_service.fgfiles.ApplyStyle(0,3)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+
+Program.Sub.buildstyle_fgfiles.End
+
+program.sub.ddlselmodules_click.start
+
+'F.Intrinsic.Control.If(V.Screen.F_service!ddlselmodules.ListIndex,=,1)
+'	Gui.F_service.ddlmodules.Visible(true)
+'	Gui.F_service.txtmselection.Visible(false)
+'	Gui.F_service.cmdmsbrowse.Visible(false)
+'F.Intrinsic.Control.elseIf(V.Screen.F_service!ddlselmodules.ListIndex,=,2)
+'	Gui.F_service.txtmselection.Visible(true)
+'	Gui.F_service.cmdmsbrowse.Visible(true)
+'	Gui.F_service.txtmselection.Enabled(true)
+'	Gui.F_service.cmdmsbrowse.Enabled(true)
+'	Gui.F_service.ddlmodules.Visible(false)
+'	Gui.F_service.ddlmodules.Text("")
+'F.Intrinsic.Control.Else
+'	Gui.F_service.ddlmodules.Visible(false)
+'	Gui.F_service.txtmselection.Visible(false)
+'	Gui.F_service.cmdmsbrowse.Visible(false)
+'	Gui.F_service.ddlmodules.Text("")
+'F.Intrinsic.Control.endif
+
+
+
+Gui.F_service.txtmselection.Text("")
+
+F.Intrinsic.Control.If(V.Screen.F_service!ddlselmodules.ListIndex,=,1)
+'	Gui.F_service.txtmselection.Visible(true)
+'	Gui.F_service.cmdmsbrowse.Visible(true)
+	Gui.F_service.txtmselection.Locked(true)
+	Gui.F_service.txtmselection.enabled(true)
+	Gui.F_service.cmdmsbrowse.enabled(true)
+F.Intrinsic.Control.elseIf(V.Screen.F_service!ddlselmodules.ListIndex,=,2)
+'	Gui.F_service.txtmselection.Visible(true)
+'	Gui.F_service.cmdmsbrowse.Visible(true)
+	Gui.F_service.txtmselection.Locked(false)
+	Gui.F_service.txtmselection.enabled(true)
+	Gui.F_service.cmdmsbrowse.enabled(true)
+F.Intrinsic.Control.Else
+'	Gui.F_service.txtmselection.Visible(false)
+'	Gui.F_service.cmdmsbrowse.Visible(false)
+	Gui.F_service.txtmselection.enabled(false)
+	Gui.F_service.cmdmsbrowse.enabled(false)
+F.Intrinsic.Control.endif
+
+
+
+
+
+program.sub.ddlselmodules_click.end
+
+program.sub.fgsearch_mousedown.start
+
+
+'V.Local.sRet.Declare(String)
+'
+'
+'F.Intrinsic.Control.If(V.Screen.F_service!fgsearch.row,>,0)
+'	F.Intrinsic.UI.Msgbox(V.Screen.F_service!fgsearch.Col)
+'	Gui.F_service.fgsearch.GetTextMatrix(V.Screen.F_service!fgsearch.Col,V.Screen.F_service!fgsearch.row,V.Local.sRet)
+'	Gui.F_service.mltxtcolselect.text(V.Local.sRet)
+'F.Intrinsic.Control.EndIf
+
+
+
+program.sub.fgsearch_mousedown.end
+
+program.sub.cmdsearch_click.start
+V.Local.sError.Declare(String)
+V.Local.sText.Declare(String)
+V.Local.ssql.Declare(String)
+V.Local.sssql.Declare(String)
+V.Local.sReturn.Declare(String)
+V.Local.j.Declare(Long)
+V.Local.k.Declare(Long)
+V.Local.lToprow.Declare(Long)
+V.Local.lResetrow.Declare(Long)
+
+
+'store search match count
+V.Local.lsearchcount.Declare(Long)
+
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+V.Local.l_rows.Declare(Long)
+V.Local.l_currow.Declare(Long)
+V.Local.bretval.Declare(Boolean)
+V.Local.sRet.Declare(String)
+V.Local.bSearch.Declare(Boolean)
+
+V.Local.sText.Set(V.Screen.F_service!txtsearch.Text)
+
+F.Intrinsic.Control.If(V.Local.sText.trim,=,"")
+	Gui.F_service.chksearchresult.value(0)
+F.Intrinsic.Control.EndIf
+
+Gui.F_service.lblfiles.Caption("Program")
+
+
+F.Intrinsic.Control.If(V.Screen.F_service!ddlfversion.ListIndex,<,0)
+	F.Intrinsic.UI.Msgbox("Please select Global shop version #")
+	Gui.F_service.ddlfversion.SetFocus
+	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.elseIf(V.Screen.F_service!ddlselmodules.ListIndex,<,1)
+'	F.Intrinsic.UI.Msgbox("Please select the module")
+'	Gui.F_service.ddlselmodules.SetFocus
+'	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endif
+
+
+F.Intrinsic.Control.If(V.Screen.F_service!ddlselmodules.ListIndex,=,1)
+	F.Intrinsic.Control.If(V.Screen.F_service!txtmselection.Text,=,"")
+		F.Intrinsic.UI.Msgbox("Please enter module")
+		Gui.F_service.txtmselection.SetFocus
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(" and ModID = ",V.Screen.F_service!txtmselection.MetaData0,"",V.Local.sssql)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Screen.F_service!ddlselmodules.ListIndex,=,2)
+	F.Intrinsic.Control.If(V.Screen.F_service!txtmselection.Text,=,"")
+		F.Intrinsic.UI.Msgbox("Please enter Menu ID")
+		Gui.F_service.txtmselection.SetFocus
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(" and Menu_SelIDSeq =  ",V.Screen.F_service!txtmselection.MetaData1," and Menu_SelID = ",V.Screen.F_service!txtmselection.MetaData0,"",V.Local.sssql)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.UI.Msgbox(V.Local.sssql)
+
+F.Intrinsic.Control.If(V.global.bProgstart,=,False)
+	Gui.F_service.lvwfilter.RetrieveCheckedListItems(V.Local.sRet)
+	'F.Intrinsic.UI.Msgbox(V.Local.sRet)
+	'F.Intrinsic.Debug.InvokeDebugger
+	'F.Intrinsic.Debug.Stop
+	F.Intrinsic.Control.If(V.Local.sText.Trim,<>,"")
+		F.Intrinsic.Control.If(V.Local.sRet.trim,=,"***NORETURN***")
+			F.Intrinsic.UI.Msgbox("Please select the fields to filter by","Invalid Selection")
+			Gui.F_service.lvwfilter.SetFocus
+		F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.sRet.trim,<>,"***NORETURN***")
+	'		F.Intrinsic.UI.Msgbox(V.Local.sRet)
+			F.Intrinsic.UI.Msgbox("Please enter search text")
+			Gui.F_service.txtsearch.SetFocus
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Gui.F_service.fghide.Rows(1)
+Gui.F_service.fgsearch.Rows(1)
+Gui.F_service.fgsearch.FixedRows(1)
+Gui.F_service.fgfiles.Rows(1)
+'Gui.F_service.fgfiles.Visible(false)
+'F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Debug.Stop
+
+'V.global.bFetchdata.Set(True)
+Gui.F_service.mltxtcolselect.Text("")
+
+Gui.F_service.fghide.Visible(true)
+Gui.F_service.fgsearch.Visible(false)
+'Gui.F_service.fghide.enabled(false)
+
+Gui.F_service..MousePointer(11)
+F.Intrinsic.Control.if(V.global.bFetchdata,=,True)
+
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+	F.Intrinsic.String.Concat(" select si_issue.issueno as issueno,directory,filename,sdirectory from si_issue inner join si_issue_file on si_issue.issueno = si_issue_file.issueno where gs_version between  '",V.Screen.F_service!ddlfversion.Text,"' and '",V.Screen.F_service!ddltversion.Text,"'",V.Local.sssql," order by issueno",V.Local.sSql)
+	F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		V.uGlobal.UDT_Files.Redim(-1,-1)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("CON","RST","V.uglobal.udt_files",False)
+	F.Intrinsic.Control.Endif
+	F.ODBC.con!rst.Close
+
+''	Gui.F_service.fgsearch.Rows(1)
+	F.Intrinsic.String.Concat(" select issueno,issue_notes,description,groupissue,extdesc,CASE WHEN makehf = 1  THEN 'Y'  ELSE 'N' END as makehf,gs_version,CASE WHEN Feature = 1  THEN 'Y'  ELSE 'N' END as Feature from si_issue where gs_version between'",V.Screen.F_service!ddlfversion.Text,"' and '",V.Screen.F_service!ddltversion.Text,"'",V.Local.sssql," order by issueno",V.Local.sSql)
+
+'	F.Intrinsic.String.Concat(" select si_issue.issueno as issueno ,issue_notes,description,groupissue,extdesc,makehf,gs_version,filename from si_issue inner join si_issue_file on si_issue.issueno = si_issue_file.issueno where gs_version between  '",V.Screen.F_service!ddlfversion.Text,"' and '",V.Screen.F_service!ddltversion.Text,"'",V.Local.sssql," order by issueno",V.Local.sSql)
+
+
+
+'	F.Intrinsic.UI.Msgbox(V.Local.sSql)
+	F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+		F.Intrinsic.UI.Msgbox("No records found")
+		Gui.F_service.fgsearch.Visible(true)
+		Gui.F_service.fghide.Visible(false)
+		Gui.F_service..MousePointer(0)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Endif
+
+
+
+'	Gui.F_service.fghide.Visible(true)
+'	Gui.F_service.fgsearch.Visible(false)
+
+	V.uGlobal.UDT_SW.Redim(-1,-1)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("CON","RST","V.uglobal.udt_sw",False)
+
+'	Gui.F_service.fgsearch.LoadFromUDT("V.uglobal.udt_sw","iss_no::0*!*iss_desc::1*!*iss_extradesc::2*!*iss_menu::3*!*iss_notes::4*!*iss_version::5*!*iss_hfix::6",1)
+
+	V.global.bFetchdata.set(False)
+	F.ODBC.con!rst.Close
+F.Intrinsic.Control.Else
+
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+'	F.Intrinsic.UI.Msgbox(V.global.sLastsearchresult)
+	F.Intrinsic.Control.If(V.global.sLastsearchresult.trim,<>,"")
+		F.Intrinsic.String.Split(V.global.sLastsearchresult,"*!*",V.global.sLastsearchresult)
+		F.Intrinsic.Control.For(V.Local.j,V.global.sLastsearchresult.LBound,V.global.sLastsearchresult.UBound,1)
+			F.Intrinsic.Math.Add(V.global.sLastsearchresult(V.Local.j),1,V.Local.lResetrow)
+			Gui.F_service.fgsearch.ApplyStyle(V.Local.lResetrow,6)
+'			Gui.F_service.fgsearch.RemoveStyle(V.Local.lsearchcount)
+		F.Intrinsic.Control.Next(V.Local.j)
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.endif
+
+'V.Local.iRows.Declare(Long)
+'V.Local.iRow.Declare(Long)
+'V.Local.i.Declare(Long)
+'F.Intrinsic.Debug.Stop
+'Function.Intrinsic.UI.InvokeWaitDialog("Loading data. please wait ...")
+
+
+
+Gui.F_service.fgsearch.LoadFromUDT("V.uglobal.udt_sw","iss_no::0*!*iss_desc::1*!*iss_extradesc::2*!*iss_menu::3*!*iss_notes::4*!*iss_version::5*!*iss_hfix::6*!*Iss_feature::7",1)
+
+'
+V.global.sLastsearchresult.Set("")
+
+F.Intrinsic.Control.If(V.global.bProgstart,=,False)
+	F.Intrinsic.Control.If(V.Local.sRet.trim,<>,"***NORETURN***")
+		F.Intrinsic.String.IsInString(V.Local.sRet,"0",True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,"=",True)
+			F.Intrinsic.Variable.UDTSeek(V.uglobal.UDT_SW!Iss_desc,V.Screen.F_service!txtsearch.Text,2,V.local.sReturn)
+			F.Intrinsic.Control.If(V.local.sReturn.trim,<>,"")
+				V.global.sLastsearchresult.Set(V.local.sReturn)
+				F.Intrinsic.String.Split(V.local.sReturn,"*!*",V.local.sReturn)
+				F.Intrinsic.Control.If(V.Local.lsearchcount,=,0)
+					V.Local.lToprow.set(V.local.sReturn(0))
+				F.Intrinsic.Control.endif
+				F.Intrinsic.Math.Add(1,V.local.sReturn.UBound,V.Local.lsearchcount)
+				F.Intrinsic.Control.For(V.Local.j,V.local.sReturn.LBound,V.local.sReturn.UBound,1)
+					F.Intrinsic.Math.Add(V.local.sReturn(V.Local.j).Long,1,V.Local.k)
+					Gui.F_service.fgsearch.ApplyStyle(V.Local.k,2)
+				F.Intrinsic.Control.Next(V.Local.j)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+
+		F.Intrinsic.String.IsInString(V.Local.sRet,"1",True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,"=",True)
+			F.Intrinsic.Variable.UDTSeek(V.uglobal.UDT_SW!Iss_extradesc,V.Screen.F_service!txtsearch.Text,2,V.local.sReturn)
+			F.Intrinsic.Control.If(V.local.sReturn.trim,<>,"")
+				F.Intrinsic.Control.If(V.global.sLastsearchresult.trim,=,"")
+					V.global.sLastsearchresult.Set(V.local.sReturn)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Concat(V.global.sLastsearchresult,"*!*",V.local.sReturn,V.global.sLastsearchresult)
+				F.Intrinsic.Control.endif
+
+				F.Intrinsic.String.Split(V.local.sReturn,"*!*",V.local.sReturn)
+				F.Intrinsic.Control.If(V.Local.lsearchcount,=,0)
+					V.Local.lToprow.set(V.local.sReturn(0))
+				F.Intrinsic.Control.endif
+				F.Intrinsic.Math.Add(V.Local.lsearchcount,1,V.local.sReturn.UBound,V.Local.lsearchcount)
+				F.Intrinsic.Control.For(V.Local.j,V.local.sReturn.LBound,V.local.sReturn.UBound,1)
+					F.Intrinsic.Math.Add(V.local.sReturn(V.Local.j).long,1,V.Local.k)
+					Gui.F_service.fgsearch.ApplyStyle(V.Local.k,2)
+				F.Intrinsic.Control.Next(V.Local.j)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+
+		F.Intrinsic.String.IsInString(V.Local.sRet,"2",True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,"=",True)
+			F.Intrinsic.Variable.UDTSeek(V.uglobal.UDT_SW!Iss_notes,V.Screen.F_service!txtsearch.Text,2,V.local.sReturn)
+			F.Intrinsic.Control.If(V.local.sReturn.trim,<>,"")
+			F.Intrinsic.Control.If(V.global.sLastsearchresult.trim,=,"")
+				V.global.sLastsearchresult.Set(V.local.sReturn)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Concat(V.global.sLastsearchresult,"*!*",V.local.sReturn,V.global.sLastsearchresult)
+			F.Intrinsic.Control.endif
+
+			F.Intrinsic.String.Split(V.local.sReturn,"*!*",V.local.sReturn)
+				F.Intrinsic.Control.If(V.Local.lsearchcount,=,0)
+					V.Local.lToprow.set(V.local.sReturn(0))
+				F.Intrinsic.Control.endif
+				F.Intrinsic.Math.Add(V.Local.lsearchcount,1,V.local.sReturn.UBound,V.Local.lsearchcount)
+				F.Intrinsic.Control.For(V.Local.j,V.local.sReturn.LBound,V.local.sReturn.UBound,1)
+					F.Intrinsic.Math.Add(V.local.sReturn(V.Local.j).long,1,V.Local.k)
+					Gui.F_service.fgsearch.ApplyStyle(V.Local.k,2)
+				F.Intrinsic.Control.Next(V.Local.j)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+
+	'F.Intrinsic.Debug.InvokeDebugger
+	'F.Intrinsic.Debug.Stop
+		F.Intrinsic.String.IsInString(V.Local.sRet,"3",True,V.Local.bretval)
+		F.Intrinsic.Control.If(V.Local.bretval,"=",True)
+			F.Intrinsic.Variable.UDTSeek(V.uglobal.UDT_Files!filename,V.Screen.F_service!txtsearch.Text,2,V.local.sReturn)
+			F.Intrinsic.Control.If(V.local.sReturn.trim,<>,"")
+	'			F.Intrinsic.Control.If(V.global.sLastsearchresult.trim,=,"")
+	'				V.global.sLastsearchresult.Set(V.local.sReturn)
+	'			F.Intrinsic.Control.Else
+	'				F.Intrinsic.String.Concat(V.global.sLastsearchresult,"*!*",V.local.sReturn,V.global.sLastsearchresult)
+	'			F.Intrinsic.Control.endif
+
+
+	V.Local.kk.Declare(Long)
+	V.Local.lissueno.Declare(Long)
+	V.local.skReturn.Declare(String)
+
+			F.Intrinsic.String.Split(V.local.sReturn,"*!*",V.local.sReturn)
+			F.Intrinsic.Control.For(V.Local.kk,V.local.sReturn.LBound,V.local.sReturn.UBound,1)
+				V.Local.lissueno.Set(V.uGlobal.UDT_files(V.local.sReturn(V.Local.kk))!Issueno)
+				F.Intrinsic.Variable.UDTSeek(V.uglobal.UDT_SW!Iss_no,V.Local.lissueno,2,V.local.skReturn)
+
+				F.Intrinsic.Control.If(V.global.sLastsearchresult.trim,=,"")
+					V.global.sLastsearchresult.Set(V.local.skReturn)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Concat(V.global.sLastsearchresult,"*!*",V.local.skReturn,V.global.sLastsearchresult)
+				F.Intrinsic.Control.endif
+
+				F.Intrinsic.Control.If(V.local.skReturn.trim,<>,"")
+					F.Intrinsic.String.Split(V.local.skReturn,"*!*",V.local.skReturn)
+					F.Intrinsic.Control.If(V.Local.lsearchcount,=,0)
+						V.Local.lToprow.set(V.local.skReturn(0))
+					F.Intrinsic.Control.endif
+					F.Intrinsic.Math.Add(V.Local.lsearchcount,1,V.local.skReturn.UBound,V.Local.lsearchcount)
+					F.Intrinsic.Control.For(V.Local.j,V.local.skReturn.LBound,V.local.skReturn.UBound,1)
+						F.Intrinsic.Math.Add(V.local.skReturn(V.Local.j).long,1,V.Local.k)
+						Gui.F_service.fgsearch.ApplyStyle(V.Local.k,2)
+					F.Intrinsic.Control.Next(V.Local.j)
+				F.Intrinsic.Control.endif
+			F.Intrinsic.Control.Next(V.Local.kk)
+			V.global.bProgsearch.Set(True)
+	'		F.Intrinsic.Control.CallSub(Fgsearch_mouseup)
+			V.global.bProgsearch.Set(False)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.endif
+
+F.Intrinsic.Control.endif
+
+F.Intrinsic.Control.If(V.Screen.F_service!chksearchresult.Value,=,1)
+F.Intrinsic.Control.andIf(V.Local.lsearchcount,">",0)
+	F.Intrinsic.Control.CallSub(Chksearchresult_click)
+F.Intrinsic.Control.Else
+	Gui.F_service.fgsearch.Visible(true)
+	Gui.F_service.fghide.Visible(false)
+'	Gui.F_service.fghide.enabled(true)
+'r
+Gui.F_service.fgsearch.FixedRows(1)
+'r
+Gui.F_service.fgsearch.ApplyStyle(0,5)
+
+	F.Intrinsic.Control.If(V.Screen.F_service!txtsearch.text,<>,"")
+		F.Intrinsic.String.Concat(V.Local.lsearchcount," match found",V.Local.sText)
+		F.Intrinsic.Control.If(V.Local.lsearchcount,">",0)
+			F.Intrinsic.UI.Msgbox(V.Local.sText)
+			Gui.F_service.fgsearch.TopRow(V.Local.lToprow)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Search text did not match")
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.endif
+
+
+'F.Intrinsic.Debug.Stop
+
+Gui.F_service..MousePointer(0)
+'Function.Intrinsic.UI.CloseWaitDialog
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	Function.Intrinsic.UI.CloseWaitDialog
+	Gui.F_service..MousePointer(0)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+program.sub.cmdsearch_click.end
+
+program.sub.txtmselection_change.start
+
+
+V.global.bFetchdata.set(True)
+
+program.sub.txtmselection_change.end
+
+program.sub.ddltversion_click.start
+V.global.bFetchdata.set(True)
+
+program.sub.ddltversion_click.end
+
+program.sub.ddlmodules_click.start
+
+V.global.bFetchdata.set(True)
+
+program.sub.ddlmodules_click.end
+
+program.sub.chksearchresult_click.start
+
+
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.j.Declare(Long)
+V.Local.l_currow.Declare(Long)
+V.Local.l_rows.Declare(Long)
+V.Local.sRet.Declare(String)
+'
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+
+Gui.F_service.fgsearch.Rows(1)
+F.Intrinsic.String.Split(V.Global.sLastsearchresult,"*!*",V.Local.sRet)
+F.Intrinsic.Math.Add(V.Local.sRet.UBound,2,V.Local.l_rows)
+Gui.F_service.fgsearch.Rows(V.Local.l_rows)
+'Gui.F_service.fgsearch.Rows(100)
+
+F.Intrinsic.Control.For(V.Local.j,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+
+	F.Intrinsic.Math.Add(V.Local.l_currow,1,V.Local.l_currow)
+
+	Gui.F_service.fgsearch.TextMatrix(0,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j).Long)!iss_no)
+	Gui.F_service.fgsearch.TextMatrix(1,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_desc)
+	Gui.F_service.fgsearch.TextMatrix(2,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_extradesc)
+	Gui.F_service.fgsearch.TextMatrix(3,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_menu)
+	Gui.F_service.fgsearch.TextMatrix(4,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_notes)
+	Gui.F_service.fgsearch.TextMatrix(5,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_version)
+	Gui.F_service.fgsearch.TextMatrix(6,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_hfix)
+	Gui.F_service.fgsearch.TextMatrix(7,V.Local.l_currow,V.uglobal.UDT_SW(V.Local.sRet(V.Local.j))!iss_feature)
+
+	Gui.F_service.fgsearch.ApplyStyle(V.Local.l_currow,1)
+        Gui.F_service.fgsearch.ApplyStyle(V.Local.l_currow,2)
+F.Intrinsic.Control.Next(V.Local.j)
+
+
+Gui.F_service.fgsearch.ApplyStyle(0,5)
+Gui.F_service.fghide.Visible(false)
+Gui.F_service.fgsearch.Visible(true)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+program.sub.chksearchresult_click.end
+
+Program.Sub.fgfiles_MouseDown.Start
+'	F.Intrinsic.UI.Msgbox(V.Screen.F_service!fgfiles.Row)
+
+Program.Sub.fgfiles_MouseDown.End
+
+program.sub.fgfiles_commandclick.start
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SetErrorHandler("Trap_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+V.Local.sSql.Declare(String)
+V.Local.sProgram.Declare(String)
+V.Local.soutput.Declare(String)
+
+
+
+Gui.F_service.fgfiles.GetTextMatrix(1,V.Screen.F_service!fgfiles.Row,V.Local.sProgram)
+
+F.Intrinsic.String.Build("select  comments  from RD_Source_Comments where program ='{0}'",V.Local.sProgram,V.Local.sSql)
+
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		V.Local.sProgram.Set(V.ODBC.con!rst.FieldValtrim!comments)
+	F.Intrinsic.Control.EndIf
+
+F.ODBC.con!rst.Close
+
+
+Gui.F_service.frame_container.Visible(true)
+
+
+F.Intrinsic.String.Concat(V.System.Temp,"\comment.html",V.Local.soutput)
+F.Intrinsic.File.String2File(V.Local.soutput,V.Local.sProgram)
+
+Gui.F_service.htmlcontainer.Navigate(V.Local.soutput)
+
+Gui.F_service.fghide.Visible(false)
+Gui.F_service.fgsearch.Visible(false)
+Gui.F_service.mltxtcolselect.Visible(false)
+
+Gui.F_service.fgfiles.visible(false)
+Gui.F_service.lblfiles.Visible(false)
+
+Gui.F_service.cmdsearch.Enabled(false)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Trap_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.endif
+
+program.sub.fgfiles_commandclick.end
+
+program.sub.cmdclose_click.start
+
+
+
+Gui.F_service.frame_container.Visible(false)
+Gui.F_service.fghide.Visible(false)
+Gui.F_service.fgsearch.Visible(true)
+
+Gui.F_service.mltxtcolselect.Visible(true)
+
+Gui.F_service.fgfiles.visible(true)
+Gui.F_service.lblfiles.Visible(true)
+
+Gui.F_service.cmdsearch.Enabled(true)
+
+
+
+program.sub.cmdclose_click.end
+
+program.sub.fgsearch_cellenter.start
+
+
+'F.Intrinsic.UI.msgbox(V.Args.keyascii)
+
+
+program.sub.fgsearch_cellenter.end
+
+Program.Sub.Comments.Start
+${$0$}$flxgrid$}$RAN$}$8/7/2015$}$False
+Program.Sub.Comments.End
+ 
